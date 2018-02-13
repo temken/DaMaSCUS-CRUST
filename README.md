@@ -83,11 +83,11 @@ After a successful run, the resulting constraints can be plotted with the includ
 
 If you decide to use this code, please cite
 
->Emken, T. & Kouvaris, C., 2017, DaMaSCUS, Astrophysics Source Code Library, record [ascl:xx](link)
+<!--- >Emken, T. & Kouvaris, C., 2017, DaMaSCUS, Astrophysics Source Code Library, record [ascl:xx](link)--->
 
-as well as the original publication,
+<!---as well as the original publication, --->
 
->Emken, T. & Kouvaris, C., title, (2018), [arXiv:xx](https://arxiv.org/abs/xx).
+>Emken, T. & Kouvaris, C., How blind are underground and surface detectors to strongly interacting Dark Matter?, (2018), [arXiv:xx](https://arxiv.org/abs/xx).
 
 ## AUTHORS & CONTACT
 
