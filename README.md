@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/temken/DaMaSCUS-CE.svg?token=CWyAeZfiHMD8t4eitDid&branch=master)](https://travis-ci.com/temken/DaMaSCUS-CE)
-[![codecov](https://codecov.io/gh/temken/DaMaSCUS-CE/branch/master/graph/badge.svg)](https://codecov.io/gh/temken/DaMaSCUS-CE)
+[![Build Status](https://travis-ci.org/temken/DaMaSCUS-CRUST.svg?branch=master)](https://travis-ci.org/temken/DaMaSCUS-CRUST)
+[![codecov](https://codecov.io/gh/temken/DaMaSCUS-CRUST/branch/master/graph/badge.svg)](https://codecov.io/gh/temken/DaMaSCUS-CRUST)
 
 
 # DaMaSCUS - CRUST
@@ -8,7 +8,7 @@ Dark Matter Simulation Code for Underground Scatterings - Crust Edition
 
 DaMaSCUS-CRUST Version 1.0 14/02/2018
 
-<!-- <img src="https://github.com/temken/DaMaSCUS-CRUST/files/1721055/LDM-constraints.pdf" width="425"> -->
+<img src="https://user-images.githubusercontent.com/29034913/36166492-fa29a4fe-10f2-11e8-90c1-4b9fc3f96f2e.png" width="425">
 
 ## GENERAL NOTES
 
