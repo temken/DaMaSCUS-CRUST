@@ -1,0 +1,57 @@
+language: c++
+
+sudo: required
+
+compiler:
+  - gcc
+os:
+  - linux
+
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get -qq update
+
+  #Codecov
+  - sudo pip install codecov
+  - chmod +x .get_code_cov.sh
+
+  - test -n $CC  && unset CC
+  - test -n $CXX && unset CXX
+
+install:
+  #Install Eigen
+  - sudo apt-get install libeigen3-dev
+  - sudo ln -s /usr/include/eigen3/Eigen /usr/local/include/Eigen
+
+  #Install libconfig
+  #- sudo apt-get install libconfig++-dev
+  - wget https://hyperrealm.github.io/libconfig/dist/libconfig-1.7.2.tar.gz
+  - tar -xvzf libconfig-1.7.2.tar.gz
+  - pushd libconfig-1.7.2 && ./configure && make && sudo make install && popd
+
+
+  #Install openMPI
+  - sudo apt-get install openmpi-bin
+  - sudo apt-get install libopenmpi-dev
+  
+  #Codecov
+  - sudo apt-get install g++-5
+  - sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-5 90
+
+script:
+  - mpic++ --showme
+  - mpic++ --version
+  #Compile without optimization and with coverage
+  - make test
+  #Run the program
+  - cd bin/
+  - ./DaMaSCUS-CRUST .test_DAMIC.cfg
+  - ./DaMaSCUS-CRUST .test_XENON1T.cfg
+  - ./DaMaSCUS-CRUST .test_CRESST-surface.cfg
+  - ./DaMaSCUS-CRUST .test_CRESST-II.cfg
+  - cd ..
+  #Codecov
+  - ./.get_code_cov.sh
+
+after_success: 
+  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
