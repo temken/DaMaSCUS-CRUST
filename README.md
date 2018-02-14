@@ -17,7 +17,7 @@ DaMaSCUS-CRUST Version 1.0 14/02/2018
 - Users can easily change the layer structure in the config file and define layers by their density, thickness and composition.
 - DaMaSCUS-CRUST is written in C++ and fully parallelized (openMPI).
 
-For the underlying physics we refer to the corresponding paper [arXiv:xx](https://arxiv.org/abs/xx)
+For the underlying physics we refer to the corresponding paper [[arXiv:1802.04764]](https://arxiv.org/abs/1802.04764)
 
 ## CONTENT
 
@@ -87,7 +87,7 @@ If you decide to use this code, please cite
 
 <!---as well as the original publication, --->
 
->Emken, T. & Kouvaris, C., How blind are underground and surface detectors to strongly interacting Dark Matter?, (2018), [arXiv:xx](https://arxiv.org/abs/xx).
+>Emken, T. & Kouvaris, C., How blind are underground and surface detectors to strongly interacting Dark Matter?, (2018), [[arXiv:1802.04764]](https://arxiv.org/abs/1802.04764).
 
 ## AUTHORS & CONTACT
 
