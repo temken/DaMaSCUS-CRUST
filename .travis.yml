@@ -48,7 +48,7 @@ script:
   - ./DaMaSCUS-CRUST .test_DAMIC.cfg
   - ./DaMaSCUS-CRUST .test_XENON1T.cfg
   - ./DaMaSCUS-CRUST .test_CRESST-surface.cfg
-  - ./DaMaSCUS-CRUST .test_CRESST-II.cfg
+  #- ./DaMaSCUS-CRUST .test_CRESST-II.cfg
   - cd ..
   #Codecov
   - ./.get_code_cov.sh
