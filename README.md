@@ -4,6 +4,8 @@
 
 # DaMaSCUS - CRUST
 
+<a href="http://ascl.net/1803.001"><img src="https://img.shields.io/badge/ascl-1803.001-blue.svg?colorB=262255" alt="ascl:1803.001" /></a>
+
 Dark Matter Simulation Code for Underground Scatterings - Crust Edition
 
 DaMaSCUS-CRUST Version 1.0 14/02/2018
@@ -83,9 +85,9 @@ After a successful run, the resulting constraints can be plotted with the includ
 
 If you decide to use this code, please cite
 
-<!--- >Emken, T. & Kouvaris, C., 2017, DaMaSCUS, Astrophysics Source Code Library, record [ascl:xx](link)--->
+Emken, T. & Kouvaris, C., 2018, DaMaSCUS, Astrophysics Source Code Library, record [[ascl:1803.001]](https://ascl.net/1803.001)
 
-<!---as well as the original publication, --->
+as well as the original publication,
 
 >Emken, T. & Kouvaris, C., How blind are underground and surface detectors to strongly interacting Dark Matter?, (2018), [[arXiv:1802.04764]](https://arxiv.org/abs/1802.04764).
 
