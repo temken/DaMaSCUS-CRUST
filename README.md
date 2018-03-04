@@ -85,7 +85,7 @@ After a successful run, the resulting constraints can be plotted with the includ
 
 If you decide to use this code, please cite
 
-Emken, T. & Kouvaris, C., 2018, DaMaSCUS, Astrophysics Source Code Library, record [[ascl:1803.001]](https://ascl.net/1803.001)
+>Emken, T. & Kouvaris, C., 2018, DaMaSCUS-CRUST, Astrophysics Source Code Library, record [[ascl:1803.001]](https://ascl.net/1803.001)
 
 as well as the original publication,
 
