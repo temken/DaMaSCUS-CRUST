@@ -1,35 +1,34 @@
+//Contains the actual trajectory simulation function.
 #ifndef __Trajector_Simulation_hpp_
 #define __Trajector_Simulation_hpp_
 
-#include <Eigen/Geometry>
 #include <functional>
 #include <random>
 
-#include "Physical_Parameters.hpp"
-#include "General_Utilities.hpp"
+#include "Physics_Functions.hpp"
+#include "Simulation_Essentials.hpp"
 
-#include "Layer_Class.hpp"
-#include "RN_Generators.hpp"
-#include "Trajectory_Class.hpp"
+//Cut off speed for a given experiment
+	extern double Cutoff_Speed(const std::string& experiment,double mDM,int rank=0);
 
 //Initial Condition Generator
-	extern Event InitialCondition(double tIni,Eigen::Vector3d& xIni,std::mt19937& PRNG,double vCutoff = 0.0);
-
-//Propagate a particle until it scatters, reaches the detector or gets back into space
-	extern void Free_Propagation(Event& event,double& weight,std::vector<std::vector<double>>& prob,std::mt19937& PRNG,double logXi = -1.0);
-
-//Find the scattering nucleus species:
-	extern std::vector<double> ScatterNucleus(std::vector<std::vector<double>>& prob,std::mt19937& PRNG);
-
-//Perform the scattering.
-	extern double PDF_ScatterAngle(double cosalpha,double A,double mDM,double vDM,double deltaIS);
-	extern void Scatter(std::vector<std::vector<double>>& prob,Event& event, double& weight,double mDM,std::mt19937& PRNG);
+	extern Event InitialCondition(double tIni,Vector3D xIni,std::mt19937& PRNG,double vCutoff);
 
 //Simulate one particle track:
-	extern Trajectory ParticleTrack(double mDM,double sigman0,Event& IniCondi, double vcut, std::mt19937& PRNG,bool ldm);
+	struct Result
+	{
+		bool success;
+		Event final_event;
+		long unsigned int nScattering;
+		double max_horizontal_distance;
+		double weight;
 
-//Generate velocity data
-	extern std::vector<DataPoint> Simulate_Trajectories(int SampleSize,double mDM, double sigma,double vCutoff,double& hMax,long long unsigned int& ParticleCounter,std::mt19937& PRNG,bool ldm,int rank = 0);
+		//Constructors
+		Result();
+		Result(double w);
 
-
+		void Summary();
+	};
+	extern std::vector<Result> Simulate_Trajectory(DM_Particle& DM, Event IC, double vMin,std::mt19937& PRNG,Result result=Result(),std::string split_ID ="Contact");
+	
 #endif

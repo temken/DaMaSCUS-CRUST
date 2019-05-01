@@ -1,0 +1,1 @@
+DaMaSCUS-CRUST saves all results in respective folders here.

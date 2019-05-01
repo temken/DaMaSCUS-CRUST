@@ -27,16 +27,15 @@ OBJ := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SRC:.$(SRCEXT)=.o))
 all: CXXFLAGS += -O2 
 all: $(TARGET)
 
-test: LIB+= --coverage
+test: CXXFLAGS+= --coverage
 test: $(TARGET)
 
 
 $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(INC) -o $@ $^ $(LIB)
 
-
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
-	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $< $(LIB)
+	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $<
 
 
 clean:

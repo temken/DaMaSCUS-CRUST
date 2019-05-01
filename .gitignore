@@ -1,9 +1,7 @@
+bin/DaMaSCUS-CRUST
+
 *.DS_Store
 .depend
-
-#Ignore
-*.sublime-project
-*.sublime-workspace
 
 # Ignore build files
 *.o

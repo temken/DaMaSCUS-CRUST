@@ -4,6 +4,7 @@ sudo: required
 
 compiler:
   - gcc
+  - clang
 os:
   - linux
 
@@ -19,10 +20,6 @@ before_install:
   - test -n $CXX && unset CXX
 
 install:
-  #Install Eigen
-  - sudo apt-get install libeigen3-dev
-  - sudo ln -s /usr/include/eigen3/Eigen /usr/local/include/Eigen
-
   #Install libconfig
   #- sudo apt-get install libconfig++-dev
   - wget https://hyperrealm.github.io/libconfig/dist/libconfig-1.7.2.tar.gz
@@ -43,12 +40,16 @@ script:
   - mpic++ --version
   #Compile without optimization and with coverage
   - make test
-  #Run the program
+  #Run the program for different tests.
   - cd bin/
   - ./DaMaSCUS-CRUST .test_DAMIC.cfg
   - ./DaMaSCUS-CRUST .test_XENON1T.cfg
   - ./DaMaSCUS-CRUST .test_CRESST-surface.cfg
-  #- ./DaMaSCUS-CRUST .test_CRESST-II.cfg
+  - ./DaMaSCUS-CRUST .test_CRESST-II.cfg
+  - ./DaMaSCUS-CRUST .test_Semiconductor.cfg
+  - ./DaMaSCUS-CRUST .test_SENSEI_surface.cfg
+  - ./DaMaSCUS-CRUST .test_XENON10e.cfg
+  - ./DaMaSCUS-CRUST .test_XENON100e.cfg
   - cd ..
   #Codecov
   - ./.get_code_cov.sh
