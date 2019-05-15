@@ -4,7 +4,8 @@
 # DaMaSCUS - CRUST
 
 <a href="http://ascl.net/1803.001"><img src="https://img.shields.io/badge/ascl-1803.001-blue.svg?colorB=262255" alt="ascl:1803.001" /></a>
-
+[![DOI](https://zenodo.org/badge/121413611.svg)](https://zenodo.org/badge/latestdoi/121413611)
+ 
 Dark Matter Simulation Code for Underground Scatterings - Crust Edition
 
 DaMaSCUS-CRUST Version 1.1 15/05/2019
