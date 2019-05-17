@@ -1,16 +1,19 @@
 [![Build Status](https://travis-ci.org/temken/DaMaSCUS-CRUST.svg?branch=master)](https://travis-ci.org/temken/DaMaSCUS-CRUST)
 [![codecov](https://codecov.io/gh/temken/DaMaSCUS-CRUST/branch/master/graph/badge.svg)](https://codecov.io/gh/temken/DaMaSCUS-CRUST)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # DaMaSCUS - CRUST
 
 <a href="http://ascl.net/1803.001"><img src="https://img.shields.io/badge/ascl-1803.001-blue.svg?colorB=262255" alt="ascl:1803.001" /></a>
 [![DOI](https://zenodo.org/badge/121413611.svg)](https://zenodo.org/badge/latestdoi/121413611)
+[![arXiv](https://img.shields.io/badge/arXiv-1802.04764-B31B1B.svg)](https://arxiv.org/abs/1802.04764)
+[![arXiv](https://img.shields.io/badge/arXiv-1905.06348-B31B1B.svg)](https://arxiv.org/abs/1905.06348)
  
 Dark Matter Simulation Code for Underground Scatterings - Crust Edition
 
 DaMaSCUS-CRUST Version 1.1 15/05/2019
 
-<img src="https://user-images.githubusercontent.com/29034913/36166492-fa29a4fe-10f2-11e8-90c1-4b9fc3f96f2e.png" width="425">
+<img src="https://user-images.githubusercontent.com/29034913/57919204-adef1600-7898-11e9-9464-bfd496eeb95b.png" width="800">
 
 ## GENERAL NOTES
 
@@ -22,7 +25,7 @@ DaMaSCUS-CRUST Version 1.1 15/05/2019
 - Two MC rare-event techniques can be invoked to speed up the simulations: Importance Sampling and Geometric Importance Splitting. Both can be (de-)activated and adjusted in the configuration file.
 - DaMaSCUS-CRUST is written in C++ and fully parallelized (openMPI).
 
-For the underlying physics we refer to the corresponding papers, [[arXiv:1802.04764]](https://arxiv.org/abs/1802.04764) and [[arXiv:190x.xxxx]](https://arxiv.org/abs/190x.xxxx).
+For the underlying physics we refer to the corresponding papers, [[arXiv:1802.04764]](https://arxiv.org/abs/1802.04764) and [[arXiv:1905.06348]](https://arxiv.org/abs/1905.06348).
 
 ## CONTENT
 
@@ -93,7 +96,7 @@ If you decide to use this code, please cite
 
 as well as the original publications,
 
->Emken, T. , Essig, R., Kouvaris, C., & Sholapurkar, M., Direct Detection of Strongly Interacting Sub-GeV Dark Matter via Electron Recoils,[[arXiv:190x.xxxx]](https://arxiv.org/abs/190x.xxxx).
+>Emken, T. , Essig, R., Kouvaris, C., & Sholapurkar, M., Direct Detection of Strongly Interacting Sub-GeV Dark Matter via Electron Recoils,[[arXiv:1905.06348]](https://arxiv.org/abs/1905.06348).
 
 >Emken, T.& Kouvaris, C., How blind are underground and surface detectors to strongly interacting Dark Matter?, [Phys.Rev. D97 (2018) no.11, 115047 ](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.115047), [[arXiv:1802.04764]](https://arxiv.org/abs/1802.04764).
 
