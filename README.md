@@ -11,7 +11,7 @@
  
 Dark Matter Simulation Code for Underground Scatterings - Crust Edition
 
-DaMaSCUS-CRUST Version 1.1 15/05/2019
+DaMaSCUS-CRUST Version 1.1.1 16/10/2019
 
 <img src="https://user-images.githubusercontent.com/29034913/57919204-adef1600-7898-11e9-9464-bfd496eeb95b.png" width="800">
 
@@ -87,6 +87,18 @@ mpirun -n N DaMaSCUS-CRUST config.cfg
 where N is the number of MPI processes.
 
 After a successful run, the resulting constraints can be plotted with the included *Mathematica* notebook */Plot.nb*.
+
+**New in version 1.1.1**: Alternative, the user may also directly compute the underground DM speed distribution for a given mass, cross section, speed cutoff and sample size via command line arguments. The config file is still necessary to define the interaction, shielding layers, rare event techniques, etc..  
+
+Example: For a DM mass of 500 MeV, a nucleon cross section of 1e-31 cm^2, a minimum speed of 100 km/sec, and a sample size of 10000, the user can run  
+
+```
+mpirun -n N DaMaSCUS-CRUST config.cfg 0.5 1e-31 100 10000  
+```  
+
+Note: The minimum speed and sample size are *optional* command line arguments. The default value for v_Min is 0, whereas the default choice for the sample size is taken from the config file.  
+
+The resulting speed distribution is saved in the folder /results/*Simulation_ID*.
 
 ## CITING DaMaSCUS
 

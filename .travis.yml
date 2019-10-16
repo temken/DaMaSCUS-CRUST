@@ -50,6 +50,7 @@ script:
   - ./DaMaSCUS-CRUST .test_SENSEI_surface.cfg
   - ./DaMaSCUS-CRUST .test_XENON10e.cfg
   - ./DaMaSCUS-CRUST .test_XENON100e.cfg
+  - ./DaMaSCUS-CRUST .test_DAMIC.cfg 0.5 1e-31 100 100
   - cd ..
   #Codecov
   - ./.get_code_cov.sh
