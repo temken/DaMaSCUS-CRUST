@@ -108,7 +108,7 @@ If you decide to use this code, please cite
 
 as well as the original publications,
 
->Emken, T. , Essig, R., Kouvaris, C., & Sholapurkar, M., Direct Detection of Strongly Interacting Sub-GeV Dark Matter via Electron Recoils,[[arXiv:1905.06348]](https://arxiv.org/abs/1905.06348).
+>Emken, T. , Essig, R., Kouvaris, C., & Sholapurkar, M., Direct Detection of Strongly Interacting Sub-GeV Dark Matter via Electron Recoils, [JCAP 1909 (2019) no.09, 070](https://iopscience.iop.org/article/10.1088/1475-7516/2019/09/070),[[arXiv:1905.06348]](https://arxiv.org/abs/1905.06348).
 
 >Emken, T.& Kouvaris, C., How blind are underground and surface detectors to strongly interacting Dark Matter?, [Phys.Rev. D97 (2018) no.11, 115047 ](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.115047), [[arXiv:1802.04764]](https://arxiv.org/abs/1802.04764).
 
