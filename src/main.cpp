@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 		int GIS_Domains=1;
 		if(GIS)
 		{
-			GIS_Domains = std::min(3,Importance_Domains(DM,Analytic_vMean,vMin_pdf,GIS_Kappa,Layers));
+			GIS_Domains = std::min(10,Importance_Domains(DM,Analytic_vMean,vMin_pdf,GIS_Kappa,Layers));
 			Compute_Importance_Boundaries(DM,Analytic_vMean,GIS_Domains,GIS_Splits,Layers);
 		}
 		//Pre-simulation output.
