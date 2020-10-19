@@ -511,7 +511,8 @@ using namespace std::placeholders;
 							result.weight*=Weight_Angle;
 							result.nScattering++;
 							//Check if we fall below the speed cutoff
-							if(event.Speed()<vMin)  
+							double speed= event.Speed();
+							if(speed<vMin || speed <1.0e-20)  
 							{
 								simulate = false;
 								result.final_event=event;
