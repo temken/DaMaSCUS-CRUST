@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/temken/DaMaSCUS-CRUST.svg?branch=master)](https://travis-ci.org/temken/DaMaSCUS-CRUST)
-[![codecov](https://codecov.io/gh/temken/DaMaSCUS-CRUST/branch/master/graph/badge.svg)](https://codecov.io/gh/temken/DaMaSCUS-CRUST)
+[![Build Status](https://travis-ci.org/temken/DaMaSCUS-CRUST.svg?branch=main)](https://travis-ci.org/temken/DaMaSCUS-CRUST)
+[![codecov](https://codecov.io/gh/temken/DaMaSCUS-CRUST/branch/main/graph/badge.svg)](https://codecov.io/gh/temken/DaMaSCUS-CRUST)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # DaMaSCUS - CRUST
