@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
 		}
 		double mDM_pdf	 = atof(argv[2]) * GeV;
 		double sigma_pdf = atof(argv[3]) * cm * cm;
-		double vMin_pdf	 = (argc == 5) ? atof(argv[4]) * km / sec : 0;
+		double vMin_pdf	 = (argc >= 5) ? atof(argv[4]) * km / sec : 0;
 		if(argc == 6)
 			SampleSize = atof(argv[5]);
 		DM.Set_Mass(mDM_pdf);
