@@ -341,14 +341,16 @@ void Scatter(const DM_Particle& DM, Event& event, double& weight, std::mt19937& 
 	double vDM = vIni.norm();
 	// Find target
 	int layer				   = Current_Layer(event);
-	std::vector<double> target = Layers[layer - 1].Sample_Target(vDM, PRNG);   // prob[ScatterNucleus(prob,PRNG)];
-	// Find cos alpha
+	std::vector<double> target = Layers[layer - 1].Sample_Target(vDM, PRNG);
+	// Find scattering angle
 	double cosalpha = Sample_ScatteringAngle(DM, target, vDM, IS_Angle, weight, PRNG);
-	// Construction of n, the unit vector pointing into the direction of vfinal.
-	double cosphi	= 2.0 * ProbabilitySample(PRNG) - 1.0;
-	double sinphi	= sqrt(1.0 - cosphi * cosphi);
 	double sinalpha = sqrt(1.0 - cosalpha * cosalpha);
-	double aux		= sqrt(1.0 - pow(ev[2], 2.0));
+
+	// Construction of n, the unit vector pointing into the direction of vfinal.
+	double phi	  = 2.0 * M_PI * ProbabilitySample(PRNG);
+	double cosphi = cos(phi), sinphi = sin(phi);
+
+	double aux = sqrt(1.0 - pow(ev[2], 2.0));
 	Vector3D n(
 		cosalpha * ev[0] + (sinalpha * (-ev[0] * ev[2] * cosphi + ev[1] * sinphi)) / aux,
 		cosalpha * ev[1] + (sinalpha * (-ev[1] * ev[2] * cosphi - ev[0] * sinphi)) / aux,
