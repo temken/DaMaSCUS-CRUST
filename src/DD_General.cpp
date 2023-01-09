@@ -66,15 +66,19 @@ Interpolation EtaFunction(const std::vector<double>& attenuation, const std::vec
 {
 	Interpolation kde = Perform_KDE(speeddata, vCutoff, (vesc + vEarth));
 	kde.Multiply(attenuation[0]);
+	std::function<double(double)> integrand = [&kde](double v) {
+		if(v < 1e-20)
+			return 0.0;
+		else
+			return kde(v) / v;
+	};
+
 	int points = 200;
 	double dv  = (vesc + vE - vCutoff) / (points - 1.0);
 	std::vector<std::vector<double>> interpol_list;
 	for(int i = 0; i < 199; i++)
 	{
-		double vMin								= vCutoff + i * dv;
-		std::function<double(double)> integrand = [&kde](double v) {
-			return kde(v) / v;
-		};
+		double vMin	   = vCutoff + i * dv;
 		double epsilon = 1e-2 * (vesc + vE - vMin) * (integrand(vMin) + integrand((vMin + vEarth + vesc) / 2.0)) / 2.0;
 		double value   = Integrate(integrand, vMin, vesc + vE, epsilon);
 		interpol_list.push_back(std::vector<double> {vMin, value});
