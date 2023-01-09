@@ -313,7 +313,7 @@ Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experim
 		std::exit(EXIT_FAILURE);
 	}
 }
-Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experiment, const std::vector<DataPoint>& data, const std::vector<double>& attenuation)
+Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experiment, const std::vector<DataPoint>& data, const std::vector<double>& attenuation, double vCutoff)
 {
 	if(experiment == "DAMIC")
 	{
@@ -325,7 +325,7 @@ Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experim
 		double Ethr		  = 0.55 * keV;
 		double Emax		  = 7.0 * keV;
 		// spectrum:
-		Interpolation spectrum = dRdER(DM, Ethr, Emax, X, Z, A, attenuation, data);
+		Interpolation spectrum = dRdER(DM, Ethr, Emax, X, Z, A, attenuation, data, vCutoff);
 		spectrum.Multiply(efficiency);
 		return spectrum;
 	}
@@ -339,7 +339,7 @@ Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experim
 		double Ethr		  = 5 * keV;
 		double Emax		  = 40.0 * keV;
 		// spectrum:
-		Interpolation spectrum = dRdER(DM, Ethr, Emax, X, Z, A, attenuation, data);
+		Interpolation spectrum = dRdER(DM, Ethr, Emax, X, Z, A, attenuation, data, vCutoff);
 		spectrum.Multiply(efficiency);
 		return spectrum;
 	}
@@ -362,9 +362,9 @@ Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experim
 		// 2.1 Interpolate the 3 recoil spectra dR/dER
 		double ERmin		   = Ethr - 3.0 * resolution;
 		double ERmax		   = Emax + 6.0 * resolution;
-		Interpolation dRdER_O  = dRdER(DM, ERmin, ERmax, X[0], Z[0], A[0], attenuation, data);
-		Interpolation dRdER_Ca = dRdER(DM, ERmin, ERmax, X[1], Z[1], A[1], attenuation, data);
-		Interpolation dRdER_W  = dRdER(DM, ERmin, ERmax, X[2], Z[2], A[2], attenuation, data);
+		Interpolation dRdER_O  = dRdER(DM, ERmin, ERmax, X[0], Z[0], A[0], attenuation, data, vCutoff);
+		Interpolation dRdER_Ca = dRdER(DM, ERmin, ERmax, X[1], Z[1], A[1], attenuation, data, vCutoff);
+		Interpolation dRdER_W  = dRdER(DM, ERmin, ERmax, X[2], Z[2], A[2], attenuation, data, vCutoff);
 
 		// 2.2 Find the minimum and maximum ER for which we have contributions.
 		std::vector<double> ERmax_aux = {ERMax((vesc + vEarth), DM.mass, A[0]), ERMax((vesc + vEarth), DM.mass, A[1]), ERMax((vesc + vEarth), DM.mass, A[2])};
@@ -424,8 +424,8 @@ Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experim
 		// 2.1 Interpolate the 3 recoil spectra dR/dER
 		double ERmin		   = Ethr - 3.0 * resolution;
 		double ERmax		   = Emax + 6.0 * resolution;
-		Interpolation dRdER_O  = dRdER(DM, ERmin, ERmax, X[0], Z[0], A[0], attenuation, data);
-		Interpolation dRdER_Al = dRdER(DM, ERmin, ERmax, X[1], Z[1], A[1], attenuation, data);
+		Interpolation dRdER_O  = dRdER(DM, ERmin, ERmax, X[0], Z[0], A[0], attenuation, data, vCutoff);
+		Interpolation dRdER_Al = dRdER(DM, ERmin, ERmax, X[1], Z[1], A[1], attenuation, data, vCutoff);
 
 		// 2.2 Find the minimum and maximum ER for which we have contributions.
 		std::vector<double> ERmax_aux = {ERMax((vesc + vEarth), DM.mass, A[0]), ERMax((vesc + vEarth), DM.mass, A[1])};

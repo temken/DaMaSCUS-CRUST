@@ -11,6 +11,6 @@ extern double vMinimal_N(double RecoilEnergy, double mChi, double A);
 extern double ERMax(double v, double mChi, double A);
 // 3. Direct detection nuclear recoil spectrum, both analytic and MC
 extern double dRdER(double ER, const DM_Particle& DM, double X, int Z, double A);
-extern Interpolation dRdER(const DM_Particle& DM, double Emin, double Emax, double X, int Z, double A, const std::vector<double>& attenuation, const std::vector<DataPoint>& speeddata);
+extern Interpolation dRdER(const DM_Particle& DM, double Emin, double Emax, double X, int Z, double A, const std::vector<double>& attenuation, const std::vector<DataPoint>& speeddata, double vCutoff);
 
 #endif
