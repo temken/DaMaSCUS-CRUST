@@ -472,7 +472,7 @@ int main(int argc, char* argv[])
 					std::vector<double> attenuation = Compute_Attenuation(Global_ParticleCounter, Global_Data, vCutoff);
 					// 2.2 Likelihood and total number of events.
 					std::vector<double> Ntot_MC;
-					Interpolation spectrum_MC  = Compute_Spectrum(DM, Detector, Global_Data, attenuation);
+					Interpolation spectrum_MC  = Compute_Spectrum(DM, Detector, Global_Data, attenuation, vCutoff);
 					std::vector<double> LLH_MC = Likelihood(DM, Detector, spectrum_MC, attenuation, Global_Data, vCutoff, Ntot_MC);
 					// 2.3 Create some output
 					f1 << DM.mass << "\t" << InUnits(sigma, cm * cm) << "\t" << LLH_MC[0] << "\t" << LLH_MC[1] << "\t" << LLH << "\t" << Ntot_MC[0] << "\t" << Ntot_MC[1] << "\t" << Ntot << endl;

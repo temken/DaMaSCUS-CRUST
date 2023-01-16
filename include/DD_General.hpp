@@ -17,7 +17,7 @@ extern Interpolation EtaFunction(const std::vector<double>& attenuation, const s
 
 // 3. Compute recoil spectrum
 extern Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experiment);
-extern Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experiment, const std::vector<DataPoint>& data, const std::vector<double>& attenuation);
+extern Interpolation Compute_Spectrum(const DM_Particle& DM, const std::string& experiment, const std::vector<DataPoint>& data, const std::vector<double>& attenuation, double vCutoff);
 
 // 4. Likelihood
 extern double Likelihood(const DM_Particle& DM, const std::string& experiment, const std::function<double(double)>& spectrum, double& N);
