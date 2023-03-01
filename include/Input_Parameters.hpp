@@ -25,6 +25,7 @@ extern double IS_Angle;	  // Scattering Angle
 extern double IS_MFP;	  // MFP
 // Importance splitting
 extern bool GIS;
+extern int GIS_max_layers;
 extern double GIS_Splits;
 extern double GIS_Kappa;
 // Parameter scan
