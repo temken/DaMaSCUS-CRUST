@@ -11,7 +11,7 @@
  
 Dark Matter Simulation Code for Underground Scatterings - Crust Edition
 
-DaMaSCUS-CRUST Version 1.1.1 16/10/2019
+DaMaSCUS-CRUST Version 1.2.0 02/03/2023
 
 <img src="https://user-images.githubusercontent.com/29034913/57919204-adef1600-7898-11e9-9464-bfd496eeb95b.png" width="800">
 
@@ -100,13 +100,28 @@ Note: The minimum speed and sample size are *optional* command line arguments. T
 
 The resulting speed distribution is saved in the folder /results/*Simulation_ID*.
 
-## CITING DaMaSCUS
+## CITING DaMaSCUS-CRUST
 
 If you decide to use this code, please cite
 
 >Emken, T. & Kouvaris, C., 2018, DaMaSCUS-CRUST, Astrophysics Source Code Library, record [[ascl:1803.001]](https://ascl.net/1803.001)
 
-as well as the original publications,
+BibTex entry:
+
+```
+@software{DaMaSCUScrust,
+  author = {Emken, Timon},
+  title = {{Dark Matter Simulation Code for Underground Scatterings - Crust Edition~(DaMaSCUS-CRUST) [Code, v1.2.0]}},
+  year         = {2018},
+  publisher    = {Zenodo},
+  version      = {v1.2.0},
+  doi          = {DOI:10.5281/zenodo.2846400},
+  url          = {https://doi.org/10.5281/zenodo.2846400},
+  howpublished={Astrophysics Source Code Library record \href{https://ascl.net/1803.001}{[ascl:1803.001]}. The code can be found under \url{https://github.com/temken/damascus-crust}. Version 1.2.0 is archived as \href{https://doi.org/10.5281/zenodo.2846400}{DOI:10.5281/zenodo.2846400}}
+}
+```
+
+Please cite the original publications as well.
 
 >Emken, T. , Essig, R., Kouvaris, C., & Sholapurkar, M., Direct Detection of Strongly Interacting Sub-GeV Dark Matter via Electron Recoils, [JCAP 1909 (2019) no.09, 070](https://iopscience.iop.org/article/10.1088/1475-7516/2019/09/070),[[arXiv:1905.06348]](https://arxiv.org/abs/1905.06348).
 
@@ -116,8 +131,7 @@ as well as the original publications,
 
 The authors of DaMaSCUS-CRUST are Timon Emken and Chris Kouvaris.
 
-For questions, bug reports or other suggestions please contact Timon Emken (emken@chalmers.se).
-
+For questions, bug reports or other suggestions please open an [issue on GitHub](https://github.com/temken/DaMaSCUS-CRUST/issues).
 
 ## LICENCE
 
