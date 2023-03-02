@@ -12,7 +12,7 @@ using namespace libconfig;
 
 // 1. Global variables and input parameters
 // Version
-std::string version = "1.1";
+std::string version = "1.2.0";
 // Input variables
 // Simulation ID
 std::string ID = "default";
