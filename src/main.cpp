@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
 		int GIS_Domains = 1;
 		if(GIS)
 		{
-			GIS_Domains = std::min(10, Importance_Domains(DM, Analytic_vMean, vMin_pdf, GIS_Kappa, Layers));
+			GIS_Domains = std::min(GIS_max_layers, Importance_Domains(DM, Analytic_vMean, vMin_pdf, GIS_Kappa, Layers));
 			Compute_Importance_Boundaries(DM, Analytic_vMean, GIS_Domains, GIS_Splits, Layers);
 		}
 		// Pre-simulation output.
@@ -321,7 +321,7 @@ int main(int argc, char* argv[])
 				if(GIS)
 				{
 					int GIS_Domains_new = Importance_Domains(DM, Analytic_vMean, vCutoff, GIS_Kappa, Layers);
-					GIS_Domains			= std::min(25, std::min(GIS_Domains_new, GIS_Domains + 1));
+					GIS_Domains			= std::min(GIS_max_layers, std::min(GIS_Domains_new, GIS_Domains + 1));
 					Compute_Importance_Boundaries(DM, Analytic_vMean, GIS_Domains, GIS_Splits, Layers);
 				}
 				// Pre-simulation output.

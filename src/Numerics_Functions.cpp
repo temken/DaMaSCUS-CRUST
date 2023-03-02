@@ -651,21 +651,28 @@ unsigned int Interpolation::Hunt(double x)
 // Find j such that list[j]<x<list[j+1]
 unsigned int Interpolation::Locate(double x)
 {
-	if(((xDomain[0] - x) > 0.0) || ((x - xDomain[1]) > 0.0))
-	{
-		printf("\nError in Interpolation::Locate(): x = %e lies outside the domain [%e,%e].\n\n", x, xDomain[0], xDomain[1]);
-		std::exit(EXIT_FAILURE);
-	}
-	else
-	{
-		// Use Bisection() or the Hunt method, depending of the last calls were correlated.
-		unsigned int j = corr ? Hunt(x) : Bisection(x, 0, N_Data - 1);
-		// Check if the points are still correlated.
-		corr = (fabs((j - jLast)) < 10);
+    // tolerance to avoid float-precision errors when comparing x with the domain edges
+    double tolerance = (xDomain[1] - xDomain[0])*1e-8;
+    
+    if(((xDomain[0] - x) > tolerance) || ((x - xDomain[1]) > tolerance))
+    {
+        printf("\nError in Interpolation::Locate(): x = %e lies outside the domain [%e,%e].\n\n", x, xDomain[0], xDomain[1]);
+        std::exit(EXIT_FAILURE);
+    }
+    else
+    {
+        // if x is slightly outside the domain (but within the tolerance), setting it to the corresponding domain edge
+        x = std::max(xDomain[0], std::min(xDomain[1], x));
+        
+        // Use Bisection() or the Hunt method, depending of the last calls were correlated.
+        unsigned int j = corr ? Hunt(x) : Bisection(x, 0, N_Data - 1);
 
-		jLast = j;
-		return j;
-	}
+        // Check if the points are still correlated.
+        corr = (fabs((j - jLast)) < 10);
+
+        jLast = j;
+        return j;
+    }
 }
 // Constructors
 Interpolation::Interpolation()

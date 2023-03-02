@@ -25,6 +25,7 @@ double IS_Angle = 0.0;	 // Scattering Angle
 double IS_MFP	= 0.0;	 // MFP
 // Importance splitting
 bool GIS		  = false;
+int GIS_max_layers = 25;
 double GIS_Splits = 0.0;
 double GIS_Kappa  = 0.0;
 
@@ -272,11 +273,22 @@ void Read_Config_File(const char* inputfile, int rank)
 		cerr << "No 'kappa' setting in configuration file." << endl;
 		exit(EXIT_FAILURE);
 	}
+	// Max number of layers
+	try
+	{
+		GIS_max_layers = cfg.lookup("maxLayers");
+	}
+	catch(const SettingNotFoundException& nfex)
+	{
+		// if maxLayers is not in the config, using the default value - 25
+		GIS_max_layers = 25;
+	}
 	if(rank == 0 && GIS)
 	{
 		cout << "\t\tImportance Splitting\t[x]" << endl;
 		cout << "\t\t\tSplits:\t\t" << GIS_Splits << endl;
-		cout << "\t\t\tKappa:\t\t" << GIS_Kappa << endl
+		cout << "\t\t\tKappa:\t\t" << GIS_Kappa << endl;
+		cout << "\t\t\tMaxLayers:\t\t" << GIS_max_layers << endl        
 			 << endl;
 	}
 	else if(rank == 0)
